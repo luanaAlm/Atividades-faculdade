@@ -1,1 +1,1 @@
-# Aqui contêm atividades feitas ao longo do cu
+# Aqui contêm atividades feitas ao longo do curso
