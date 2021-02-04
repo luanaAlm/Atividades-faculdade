@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body >
+	<h:form>
+	
+		<p:fieldset legend="Cadastro de Maquinas">
+		<center>
+			<p:panelGrid  columns="2">
+
+				<h:outputLabel value="Cliente" />
+				<p:inputText id="cliente" size="30"
+					value="#{maquinasBean.maquinas.cliente}" />
+
+				<h:outputLabel value="Maquina" />
+				<p:inputText id="maquina" size="30"
+					value="#{maquinasBean.maquinas.maquina}" />
+
+				<h:outputLabel value="Processador" />
+				<p:inputText id="processador" size="30"
+					value="#{maquinasBean.maquinas.processador}" />
+
+				<h:outputLabel value="Numero de Série" />
+				<p:inputMask mask="99999" id="numSerie" size="30"
+					value="#{maquinasBean.maquinas.numSerie}" />
+
+				<h:outputLabel value="Data da Entrega" />
+				<p:calendar id="dataEntrega" size="30"
+					value="#{maquinasBean.maquinas.dataEntrega}" />
+
+				<p:commandButton value="Cadastrar" ></p:commandButton>
+			<br></br>
+			</p:panelGrid>
+			<br></br>
+			<p:dataTable value="#{maquinasBean.listMaquinas}" var="varMaquina">
+				<p:column headerText="Cliente">
+					<h:outputLabel value="#{maquinas.cliente}"></h:outputLabel>
+				</p:column>
+				<p:column headerText="Maquina">
+					<h:outputLabel value="#{maquinas.maquina}"></h:outputLabel>
+				</p:column>
+				<p:column headerText="Processador">
+					<h:outputLabel value="#{maquinas.processador}"></h:outputLabel>
+				</p:column>
+				<p:column headerText="Numero de Série">
+					<h:outputLabel value="#{maquinas.numSerie}"></h:outputLabel>
+				</p:column>
+				<p:column headerText="Data da Entrega">
+					<h:outputLabel value="#{maquinas.dataEntrega}"></h:outputLabel>
+				</p:column>
+			</p:dataTable>
+				</center>
+		</p:fieldset>
+	
+	</h:form>
+
+
+</h:body>
+</html>

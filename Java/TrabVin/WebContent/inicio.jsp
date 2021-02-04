@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form (HTML + CSS)</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact Form</title>
+
+  <!-- ligação ao documento css. não aplicável no codepen.
+  <link rel="stylesheet" type="text/css" href="contact-form.css">
+-->
+  
+  </head>
+
+
+<body>	
+  
+  <!-- formulário de contacto utilizando html e css -->  
+
+	<div class="contact_form">
+
+		<div class="formulario">			
+      <h1>Cadastro de Maquinas</h1>
+				<form method="get" action=index.jsp></form>
+				<a href="Index.jsp"><input type="button"  value="Novo Cadastro" color="#1b7587"></a>
+					
+		</div>	
+	</div>
+
+</body>
+</html>
+
+
+<!-- created by magda pimentel, may 2017 -->
+<!-- partial -->
+  
+</body>
+</html>

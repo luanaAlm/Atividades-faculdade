@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>sysCar-Felipe</title>
+</h:head>
+
+<h:body>
+
+	<h:form>
+		<p:dataTable value="#{carroBEAN.carros}" var="carro">
+
+			<p:column headerText="ID">
+				<h:outputText value="#{carro.id}" />
+			</p:column>
+
+			<p:column headerText="Modelo">
+				<h:outputText value="#{carro.modelo}" />
+			</p:column>
+
+			<p:column headerText="Preço">
+				<h:outputText value="#{carro.preco}" />
+			</p:column>
+
+			<p:column headerText="Observações">
+				<h:outputText value="#{carro.observacoes}" />
+			</p:column>
+
+			<p:column headerText="Data da Venda">
+				<h:outputText value="#{carro.datavenda}" />
+			</p:column>
+
+		</p:dataTable>
+	</h:form>
+
+	<h:form>
+		<h:panelGrid id="pnlgProdNovo1" columns="4">
+
+			<p:outputLabel value="digite o MODELO: " />
+			<h:inputText size="50" maxlength="50"
+				value="#{carroBEAN.carro.modelo}" />
+
+			<p:outputLabel value="digite o PREÇO: " />
+			<h:inputText size="50" maxlength="50"
+				value="#{carroBEAN.carro.preco}" />
+
+			<p:outputLabel value="digite as OBSERVAÇÕES: " />
+			<p:inputTextarea cols="76" rows="4" autoResize="false"
+				value="#{carroBEAN.carro.observacoes}" />
+
+			<p:outputLabel value="digite a DATA DA VENDA: " />
+			<h:inputText size="50" maxlength="50"
+				value="#{carroBEAN.carro.datavenda}" />
+
+		</h:panelGrid>
+
+		<h:panelGrid columns="2">
+
+			<p:commandButton value="Salvar" actionListener="#{carroBEAN.salvar}" />
+
+		</h:panelGrid>
+	</h:form>
+
+</h:body>
+
+</html>

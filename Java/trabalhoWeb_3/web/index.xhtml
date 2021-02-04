@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+   <h:head>
+
+</h:head>
+<h:body>
+    <h:form id="frm">
+        
+        <h1 align="center">Cadastro de Membros</h1>
+      
+		<!-- entrada dde dados -->
+		<!-- Dados pessoais -->
+                <p:panelGrid  columns="2">
+
+				<h:outputLabel value="Nome"></h:outputLabel>
+                                <p:inputText value="#{pessoaBean.pessoa.nome}"></p:inputText>
+
+				
+				<h:outputLabel value="Endereço"></h:outputLabel>
+				<p:inputText value="#{pessoaBean.pessoa.endereco}"></p:inputText>
+
+				<h:outputLabel value="Numero da Casa"></h:outputLabel>
+                                <p:inputNumber value="#{pessoaBean.pessoa.numCasa}" />
+
+
+				<h:outputLabel value="Telefone"></h:outputLabel>
+				<p:inputMask value="#{pessoaBean.pessoa.telefone}"
+					mask="(99) 9 9999-9999" />
+
+				<h:outputLabel value="Contribuição Voluntária"></h:outputLabel>
+                                <p:inputNumber value="#{pessoaBean.pessoa.contVol}"></p:inputNumber>
+                                <br></br>
+                                <br></br>
+				<h:outputLabel value="Observação"></h:outputLabel>
+				<p:inputTextarea cols="76" rows="4" autoResize="false"
+					placeholder="Digite aqui uma observação"
+					value="#{pessoaBean.pessoa.observacao}" />
+
+			</p:panelGrid>
+                
+			<!-- Botão -->
+                        <p:toolbar>
+				<p:toolbarGroup>
+                                    <p:commandButton value="Salvar" action="#{pessoaBean.adicionar()}" update=":frm"></p:commandButton>
+				</p:toolbarGroup>
+			</p:toolbar>
+  	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	
+			 <!-- Lista -->
+                         <p:dataTable id="frm" value="#{pessoaBean.pessoas}" var="lista">
+
+                            <p:column headerText="nome">
+                                <h:outputText value="#{lista.nome}"></h:outputText>
+				</p:column>
+                           
+                            <p:column headerText="endereço">
+                                <h:outputText value="#{lista.endereco}"></h:outputText>
+						</p:column>
+
+                            <p:column headerText="numero da casa">
+                                <h:outputText value="#{lista.numCasa}"></h:outputText>
+				
+				</p:column>
+                            <p:column headerText="Telefone">
+                                <h:outputText value="#{lista.telefone}"></h:outputText>
+				
+                            </p:column>
+
+                            <p:column headerText="Contribuição Voluntaria">
+                                <h:outputText value="#{lista.contVol}"></h:outputText>
+				
+				</p:column>
+
+                            <p:column headerText="Observação">
+                                <h:outputText value="#{lista.observacao}"></h:outputText>
+				
+				</p:column>
+			</p:dataTable>
+
+		
+	</h:form>
+</h:body>
+</html>
+
